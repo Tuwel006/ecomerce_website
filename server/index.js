@@ -4,6 +4,13 @@ const chalk = require('chalk');
 const cors = require('cors');
 const helmet = require('helmet');
 
+// Set default environment variables if not provided
+process.env.NODE_ENV = process.env.NODE_ENV || 'production';
+process.env.BASE_API_URL = process.env.BASE_API_URL || 'api';
+process.env.JWT_SECRET = process.env.JWT_SECRET || 'fallback-jwt-secret-key';
+process.env.MONGO_URI = process.env.MONGO_URI || 'mongodb+srv://tuwelshaikh006:73312100@cluster0.nompnie.mongodb.net/ecommerce?retryWrites=true&w=majority';
+process.env.CLIENT_URL = process.env.CLIENT_URL || 'https://mern-ecommerce-igzy2ge3v-sabbirs-projects-23d9d54a.vercel.app';
+
 const keys = require('./config/keys');
 const routes = require('./routes');
 const socket = require('./socket');
