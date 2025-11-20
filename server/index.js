@@ -24,6 +24,20 @@ app.use(cors());
 
 setupDB();
 require('./config/passport')(app);
+
+// Debug route to check environment variables
+app.get('/debug', (req, res) => {
+  res.json({
+    NODE_ENV: process.env.NODE_ENV,
+    BASE_API_URL: process.env.BASE_API_URL,
+    CLIENT_URL: process.env.CLIENT_URL,
+    MONGO_URI: process.env.MONGO_URI ? 'SET' : 'NOT SET',
+    JWT_SECRET: process.env.JWT_SECRET ? 'SET' : 'NOT SET',
+    port: port,
+    message: 'Server is running!'
+  });
+});
+
 app.use(routes);
 
 const server = app.listen(port, () => {
