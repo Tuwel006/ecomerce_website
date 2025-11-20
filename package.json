@@ -1,0 +1,44 @@
+{
+  "name": "my-ecommerce-store",
+  "version": "1.0.0",
+  "description": "Modern MERN Stack Ecommerce Platform",
+  "main": "server/index.js",
+  "scripts": {
+    "setup": "node setup.js",
+    "dev": "npm-run-all --parallel dev:*",
+    "dev:client": "cd client && npm run dev",
+    "dev:server": "cd server && npm run dev",
+    "build": "cd client && npm run build",
+    "start": "cd server && npm start",
+    "postinstall": "npm-run-all --parallel install:*",
+    "install:client": "cd client && npm install",
+    "install:server": "cd server && npm install",
+    "vercel-build": "npm run install:client && npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yourusername/my-ecommerce-store.git"
+  },
+  "keywords": [
+    "ecommerce",
+    "mern",
+    "node",
+    "express",
+    "mongoose",
+    "react",
+    "redux",
+    "vercel",
+    "online-store"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yourusername/my-ecommerce-store/issues"
+  },
+  "homepage": "https://github.com/yourusername/my-ecommerce-store#readme",
+  "devDependencies": {
+    "cross-env": "^5.2.1",
+    "npm-run-all": "^4.1.5"
+  }
+}
